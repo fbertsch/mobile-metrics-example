@@ -8,7 +8,8 @@
     "release_channel_collection": "prerelease",
     "bug_numbers": [ 1 ],
     "github_issues": [ 1 ],
-    "description": "An example histogram, recorded on prerelease, sent only in the application process"
+    "description": "An example histogram, recorded on prerelease, sent only in the application process",
+    "alert_emails": "frank@mozilla.com"
   },
   "EXAMPLE_EXPONENTIAL_HISTOGRAM": {
     "record_in_processes": [ "engine" ],
@@ -19,6 +20,7 @@
     "release_channel_collection": "release",
     "bug_numbers": [ 2 ],
     "github_issues": [ 3 ],
-    "description": "An example exponential histogram, sent on prerelease and release, recorded in the engine process"
+    "description": "An example exponential histogram, sent on prerelease and release, recorded in the engine process",
+    "alert_emails": "frank@mozilla.com"
   }
 }
