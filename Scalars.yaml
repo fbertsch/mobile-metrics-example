@@ -14,6 +14,7 @@ example:
     keyed: false
     description: >
       An example string scalar, recorded in the application processes on prerelease
+
   boolean_kind:
     bug_numbers:
       - 4
