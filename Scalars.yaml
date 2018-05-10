@@ -9,7 +9,7 @@ example:
     notification_emails:
       - frank@mozilla.com
     record_in_processes:
-      - 'application'
+      - application
     release_channel_collection: prerelease
     keyed: false
     description: >
