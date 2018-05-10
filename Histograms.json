@@ -70,7 +70,7 @@
     "alert_emails": ["telemetry-client-dev@mozilla.com"],
     "bug_numbers": [1188888],
     "expires_in_version": "never",
-    "releaseChannelCollection": "opt-out",
+    "release_channel_collection": "release",
     "kind": "categorical",
     "labels": [
       "CommonLabel",
@@ -184,7 +184,7 @@
     "alert_emails": ["telemetry-client-dev@mozilla.com"],
     "expires_in_version": "never",
     "kind": "flag",
-    "releaseChannelCollection": "opt-out",
+    "release_channel_collection": "release",
     "description": "a testing histogram; not meant to be touched"
   },
   "TELEMETRY_TEST_RELEASE_OPTIN": {
@@ -192,7 +192,7 @@
     "alert_emails": ["telemetry-client-dev@mozilla.com"],
     "expires_in_version": "never",
     "kind": "flag",
-    "releaseChannelCollection": "opt-in",
+    "release_channel_collection": "pre-release",
     "description": "a testing histogram; not meant to be touched"
   },
   "TELEMETRY_TEST_KEYED_RELEASE_OPTIN": {
@@ -201,7 +201,7 @@
     "expires_in_version": "never",
     "kind": "flag",
     "keyed": true,
-    "releaseChannelCollection": "opt-in",
+    "release_channel_collection": "pre-release",
     "description": "a testing histogram; not meant to be touched"
   },
   "TELEMETRY_TEST_KEYED_RELEASE_OPTOUT": {
@@ -210,7 +210,7 @@
     "expires_in_version": "never",
     "kind": "flag",
     "keyed": true,
-    "releaseChannelCollection": "opt-out",
+    "release_channel_collection": "release",
     "description": "a testing histogram; not meant to be touched"
   },
   "TELEMETRY_TEST_EXPONENTIAL": {
