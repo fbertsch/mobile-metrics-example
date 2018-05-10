@@ -1,0 +1,551 @@
+example:
+  linear_histogram:
+    representation:
+      kind: linear
+      high: 100
+      n_buckets: 50
+    record_in_processes: 
+      - application
+    expires_in_version: "1.0"
+    release_channel_collection: prerelease
+    bug_numbers: 
+      - 1
+    github_issues: 
+      - 1
+    description: >
+      An example histogram, recorded on prerelease, sent only in the application process
+    alert_emails: 
+      - "frank@mozilla.com"
+
+  exponential_histogram:
+    representation:
+      kind: exponential
+      high: 1000
+      n_buckets: 50
+    record_in_processes: 
+      - engine
+    expires_in_version: "2.0"
+    release_channel_collection: release
+    bug_numbers: 
+      - 2
+    github_issues: 
+      - 3
+    description: >
+      An example exponential histogram, sent on prerelease and release, recorded in the engine process
+    alert_emails: 
+      - frank@mozilla.com
+
+telemetry.test:
+  flag:
+    representation:
+      kind: flag
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    description: >
+      a testing histogram; not meant to be touched
+
+  count:
+    representation:
+      kind: count
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    description: >
+      a testing histogram; not meant to be touched
+
+  count2:
+    representation:
+      kind: count
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1288745
+    description: >
+      a testing histogram; not meant to be touched
+
+  count_init_no_record:
+    representation:
+      kind: count
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    description: >
+      a testing histogram; not meant to be touched - initially not recording
+
+  categorical:
+    representation:
+      kind: categorical
+      labels:
+        - CommonLabel
+        - Label2
+        - Label3
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    bug_numbers:
+      - 1188888
+    expires_in_version: never
+     description: >
+      a testing histogram; not meant to be touched
+
+  categorical_optout:
+    representation:
+      kind: categorical
+      labels:
+        - CommonLabel
+        - Label4
+        - Label5
+        - Label6
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    bug_numbers:
+      - 1188888
+    expires_in_version: never
+    releasechannelcollection: release
+    description: >
+      a testing histogram; not meant to be touched
+
+  categorical_nvalues:
+    representation:
+      kind: categorical
+      labels:
+        - CommonLabel
+        - Label7
+        - Label8
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    bug_numbers:
+      - 1188888
+    expires_in_version: never
+    n_values: 70
+    description: >
+      a testing histogram; not meant to be touched
+
+  keyed_count_init_no_record:
+    representation:
+      kind: count
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    keyed: true
+    description: >
+      a testing histogram; not meant to be touched - initially not recording
+
+  keyed_flag:
+    representation:
+      kind: flag
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    keyed: true
+    description: >
+      a testing histogram; not meant to be touched
+
+  keyed_count:
+    representation:
+      kind: count
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    keyed: true
+    description: >
+      a testing histogram; not meant to be touched
+
+  keyed_keys:
+    representation:
+      kind: boolean
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    record_in_processes:
+      - main
+      - content
+    bug_numbers:
+      - 1343855
+    expires_in_version: never
+    keyed: true
+    keys:
+      - testkey
+      - CommonKey
+      - thirdKey
+    description: >
+      a testing histogram; not meant to be touched
+
+  keyed_boolean:
+    representation:
+      kind: boolean
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    keyed: true
+    bug_numbers:
+      - 1299144
+    description: >
+      a testing histogram; not meant to be touched
+
+  keyed_exponential:
+    representation:
+      kind: exponential
+      low: 1
+      high: 40000
+      n_buckets: 10
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    keyed: true
+    bug_numbers:
+      - 1347216
+    description: >
+      a testing histogram; not meant to be touched
+
+  keyed_linear:
+    representation:
+      kind: linear
+      low: 1
+      high: 250000
+      n_buckets: 10
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    keyed: true
+    bug_numbers:
+      - 1347216
+    description: >
+      a testing histogram; not meant to be touched
+
+  keyed_categorical:
+    representation:
+      kind: categorical
+      labels:
+        - CommonLabel
+        - Label2
+        - Label3
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    keyed: true
+    bug_numbers:
+      - 1347216
+    description: >
+      a testing histogram; not meant to be touched
+
+  release_optout:
+    representation:
+      kind: flag
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    releasechannelcollection: release
+    description: >
+      a testing histogram; not meant to be touched
+
+  release_optin:
+    representation:
+      kind: flag
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    releasechannelcollection: "pre-release"
+    description: >
+      a testing histogram; not meant to be touched
+
+  keyed_release_optin:
+    representation:
+      kind: flag
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    keyed: true
+    releasechannelcollection: "pre-release"
+    description: >
+      a testing histogram; not meant to be touched
+
+  keyed_release_optout:
+    representation:
+      kind: flag
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    keyed: true
+    releasechannelcollection: release
+    description: >
+      a testing histogram; not meant to be touched
+
+  exponential:
+    representation:
+      kind: exponential
+      low: 1
+      high: 2147483646
+      n_buckets: 10
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1288745
+    description: >
+      a testing histogram; not meant to be touched
+
+  linear:
+    representation:
+      kind: linear
+      low: 1
+      high: 2147483646
+      n_buckets: 10
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1288745
+    description: >
+      a testing histogram; not meant to be touched
+
+  boolean:
+    representation:
+      kind: boolean
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version : never
+    bug_numbers:
+      - 1288745
+    description: >
+      a testing histogram; not meant to be touched
+
+  expired:
+    representation:
+      kind: flag
+    record_in_processes:
+      - main
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: 4
+    description: >
+      a testing histogram; not meant to be touched
+
+  content_process:
+    representation:
+      kind: linear
+      low: 1
+      high: 10000
+      n_buckets: 10
+    record_in_processes:
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1335343
+    description: >
+      a testing histogram; not meant to be touched
+
+  keyed_content_process:
+    representation:
+      kind: linear
+      low: 1
+      high: 10000
+      n_buckets: 10
+    record_in_processes:
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    keyed: true
+    bug_numbers:
+      - 1335343
+    description: >
+      a testing histogram; not meant to be touched
+
+  flag_content_process:
+    representation:
+      kind: flag
+    record_in_processes:
+      - content
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1335343
+    description: >
+      a testing histogram; not meant to be touched
+
+  flag_main_process:
+    representation:
+      kind: flag
+    record_in_processes:
+      - main
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1335343
+    description: >
+      a testing histogram; not meant to be touched
+
+  all_processes:
+    representation:
+      kind: linear
+      low: 1
+      high: 10000
+      n_buckets: 10
+    record_in_processes:
+      - all
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1335343
+    description: >
+      a testing histogram; not meant to be touched
+
+  all_child_processes:
+    representation:
+      kind: linear
+      low: 1
+      high: 10000
+      n_buckets: 10
+    record_in_processes:
+      - all_childs
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1335343
+    description: >
+      a testing histogram; not meant to be touched
+
+  default_products:
+    representation:
+      kind: linear
+      low: 1
+      high: 10000
+      n_buckets: 10
+    record_in_processes:
+      - all
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1452552
+    description: >
+      a testing histogram; not meant to be touched
+
+  desktop_only:
+    representation:
+      kind: linear
+      low: 1
+      high: 10000
+      n_buckets: 10
+    record_in_processes:
+      - all
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1452552
+    description: >
+      a testing histogram; not meant to be touched
+    products:
+      - firefox
+
+  multiproduct:
+    representation:
+      kind: linear
+      low: 1
+      high: 10000
+      n_buckets: 10
+    record_in_processes:
+      - all
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1452552
+    description: >
+      a testing histogram; not meant to be touched
+    products:
+      - firefox
+      - fennec
+      - geckoview
+
+  mobile_only:
+    representation:
+      kind: linear
+      low: 1
+      high: 10000
+      n_buckets: 10
+    record_in_processes:
+      - all
+    alert_emails:
+      - "telemetry-client-dev@mozilla.com"
+    expires_in_version: never
+    bug_numbers:
+      - 1452552
+    description: >
+      a testing histogram; not meant to be touched
+    products:
+      - fennec
+      - geckoview
+
