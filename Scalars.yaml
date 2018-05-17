@@ -10,7 +10,7 @@ example:
       - frank@mozilla.com
     record_in_processes:
       - application
-    release_channel_collection: prerelease
+    collect_on_channels: prerelease
     keyed: false
     description: >
       An example string scalar, recorded in the application processes on prerelease
@@ -24,7 +24,7 @@ example:
     kind: boolean
     notification_emails:
       - frank@mozilla.com
-    release_channel_collection: release
+    collect_on_channels: release
     record_in_processes:
       - 'engine'
     description: >

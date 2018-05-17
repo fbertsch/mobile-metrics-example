@@ -42,7 +42,11 @@ Added whitespace after each probe definition makes the file more human-readable.
 
 ## Scalars.yaml
 
-There is one additional field. Otherwise, this file follows the format set in [mozilla-central Scalars.yaml](https://dxr.mozilla.org/mozilla-central/rev/tip/toolkit/components/telemetry/Scalars.yaml).
+There is one additional field, and on changed field name. Otherwise, this file follows the format set in [mozilla-central Scalars.yaml](https://dxr.mozilla.org/mozilla-central/rev/tip/toolkit/components/telemetry/Scalars.yaml).
+
+### `collect_on_channels`
+
+This replaces `release_channel_collection`, and the allowed values are `release` and `pre-release`. Any `release` probes are also recorded on `pre-release`.
 
 ### `github_issues`
 
